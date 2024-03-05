@@ -186,3 +186,69 @@ Years(2003);
 Years(4);
 Years(2024);
 console.log("<==========================================>");
+//Lab Two
+console.log("Лабороторная №2 Задание 1");
+
+function SumNumbers(num){
+    let numStr = num.toString();
+    var result = 0;
+    for(let i = 0; i < numStr.length; i++){
+        result += parseInt(numStr[i])
+    }
+    console.log(result);
+}
+
+SumNumbers(245678);
+SumNumbers(97561);
+SumNumbers(543);
+console.log("<==========================================>");
+console.log("Лабороторная №2 Задание 2");
+
+function CharContact(charOne, charTwo, charThree){
+    let chars = [charOne, charTwo, charThree];
+    const str = chars.join("");
+    console.log(str);
+}
+
+CharContact('a', 'b', 'c');
+CharContact('%', '2', 'o');
+CharContact('1', '5', 'p');
+
+console.log("<==========================================>");
+console.log("Лабороторная №2 Задание 3");
+
+
+function TownInformation(nameTwon, population, area){
+    return `Town ${nameTwon} has population of ${population} and area ${area} square km.`;
+}
+console.log(TownInformation('Moscow', 12636312, 2561));
+
+
+console.log("<==========================================>");
+console.log("Лабороторная №2 Задание 4");
+
+function Calculater(numOne, tupeOperation, numTwo){
+    switch(tupeOperation){
+        case '+':
+            console.log( "Результат: " + (numOne + numTwo).toFixed(2));
+            break;
+        case '-':
+            console.log("Результат: " + (numOne - numTwo).toFixed(2));
+            break;
+    }
+}
+
+Calculater(5,'+',10);
+Calculater(25.5, '-', 3);
+
+console.log("<==========================================>");
+console.log("Лабороторная №2 Задание 5");
+
+function BinaryToDecimal(binary){
+    var digit = parseInt(binary, 2);
+    console.log(digit);
+}
+
+
+BinaryToDecimal("00001001");
+BinaryToDecimal("11110000");
