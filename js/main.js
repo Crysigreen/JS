@@ -502,7 +502,7 @@ console.log("Лабороторная №4 Задание 4");
 
 function ProgressBar(num){
     let test = num / 10;
-    let point = 10 - test;
+    // let point = 10 - test;
     let result = [];
     // console.log(test);
     // console.log(point);
@@ -537,43 +537,54 @@ console.log("Лабороторная №5 Задание 1");
 
 
 
-function Teams(Names){
+function Teams(names){
 
-    let countTest = 0;
-    let nameCount = 0;
-    console.log(Names);
-for(let i = 0; i < Names.length; i++){
-    nameCount += 1;
+//     let countTest = 0;
+//     let nameCount = 0;
+//     console.log(names);
+// for(let i = 0; i < names.length; i++){
+//     nameCount += 1;
     
     
-    countTest = 0;
-    for(let j = 0; j < Names[i].length; j++){
-        countTest += 1;
+//     countTest = 0;
+//     for(let j = 0; j < names[i].length; j++){
+//         countTest += 1;
+//     }
+
+//     const Person = Object.create(
+//         {},
+//         {
+//             name:{
+//              value: names[i],
+//              enumerable: true
+//             },
+//             number:{
+//                 value: countTest,
+//                 enumerable: true
+//             }
+
+//         }
+//     );
+    
+    
+
+    
+
+//     // console.log(Names[i]);
+//     // console.log(nameCount);
+//     // console.log(countTest); 
+
+//     console.log(`Name: ${Person.name} - Personal Number: ${Person.number}`);
+// }
+
+names.forEach(name => {
+    let person = {
+        name, 
+        personalNumber: name.length
     }
 
-    const Person = Object.create(
-        {},
-        {
-            name:{
-             value: Names[i],
-             enumerable: true
-            },
-            number:{
-                value: countTest,
-                enumerable: true
-            }
-
-        }
-    );
-    
-    // console.log(Names[i]);
-    // console.log(nameCount);
-    // console.log(countTest); 
-
-    console.log(`Name: ${Person.name} - Personal Number: ${Person.number}`);
-}
-
-
+    console.log(person);
+});
    
 }
 
@@ -587,3 +598,5 @@ Teams(mass);
 
 console.log("<==========================================>");
 console.log("Лабороторная №5 Задание 2");
+
+
