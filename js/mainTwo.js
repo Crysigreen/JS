@@ -90,6 +90,67 @@ Shop(shop, inShop);
 console.log("<==========================================>");
 console.log("Лабороторная №5 Задание 4");
 
+function storeMovies(commands) {
+    const movies = [];
+
+    function findMovieIndex(movieName) {
+        return movies.findIndex(movie => movie.name === movieName);
+    }
+
+    function addMovie(movieName) {
+        movies.push({ name: movieName });
+    }
+
+    function addDirector(movieName, director) {
+        const index = findMovieIndex(movieName);
+        if (index !== -1) {
+            movies[index].director = director;
+        }
+    }
+
+    function addDate(movieName, date) {
+        const index = findMovieIndex(movieName);
+        if (index !== -1) {
+            movies[index].date = date;
+        }
+    }
+
+    commands.forEach(command => {
+        const [action, ...params] = command.split(' ');
+
+        if (action === 'addMovie') {
+            const movieName = params.join(' ');
+            addMovie(movieName);
+        } else {
+            const movieName = action;
+            const actionType = params[0];
+            const info = params.slice(1).join(' ');
+
+            if (actionType === 'directedBy') {
+                addDirector(movieName, info);
+            } else if (actionType === 'onDate') {
+                addDate(movieName, info);
+            }
+        }
+    });
+
+    const completeMovies = movies.filter(movie => movie.name && movie.director && movie.date);
+    console.log(JSON.stringify(completeMovies));
+}
+
+const input = [
+    'addMovie Fast and Furious',
+    'addMovie Godfather',
+    'Inception directedBy Christopher Nolan',
+    'Godfather directedBy Francis Ford Coppola',
+    'Godfather onDate 29.07.2018',
+    'Fast and Furious onDate 30.07.2018',
+    'Batman onDate 01.08.2018',
+    'Fast and Furious directedBy Rob Cohen'
+    ]
+
+storeMovies(input);
+
 
 
 

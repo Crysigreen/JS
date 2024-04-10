@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="form__container">
+        <input type="text" id="firstNumber" class="numOne" placeholder="Первое число">
+        <input type="text" id="secondNumber" class="numTwo" placeholder="Второе число">
+        <div class="result" id="result" style="color: rgba(99, 152, 155, 1);"></div>
+    </div>
+
+    <a href="index2.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >Index2</button></a>
+    <a href="labSixTaskTwo.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >lab-6-2</button></a>
+    <script>
+        function colculator(){
+            var firstNumber = parseFloat(document.getElementById('firstNumber').value);
+            var secondNumber = parseFloat(document.getElementById('secondNumber').value);
+
+            if (!isNaN(firstNumber) && !isNaN(secondNumber)) {
+                var result = firstNumber - secondNumber;
+                document.getElementById('result').innerText =  result;
+            } else {
+                document.getElementById('result').innerText = 'Введины не все числа';
+            }
+        }
+
+        document.getElementById('firstNumber').addEventListener('input', colculator);
+        document.getElementById('secondNumber').addEventListener('input', colculator);
+    </script>
+
+</body>
+</html>
