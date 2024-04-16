@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Search</title>
+<style>
+  .highlight {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .container{
+    width: 200px;
+    height: 600px;
+    margin: 100px auto;
+    background-color: rgb(171, 171, 171);
+  }
+
+  ul{
+    list-style-type: none;
+    text-align: center;
+    padding-top: 20px;
+  }
+
+  li{
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+    height: 20px;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+  }
+
+  .button_t{
+    margin-top: 10px;
+    margin-left: 75px;
+  }
+
+  .inupt{
+    margin-left: 25px;
+  }
+
+
+</style>
+</head>
+<body>
+
+
+    <div class="container">
+
+<ul id="cityList">
+  <li>New York</li>
+  <li>Los Angeles</li>
+  <li>Chicago</li>
+  <li>Houston</li>
+  <li>Phoenix</li>
+  <li>Philadelphia</li>
+  <li>San Antonio</li>
+  <li>San Diego</li>
+  <li>Dallas</li>
+  <li>San Jose</li>
+</ul>
+
+
+<input type="text" id="searchInput" placeholder="Search..." class="inupt">
+<button onclick="search()" class="button_t">Search</button>
+<p id="results" style="color: white; text-align: center;"></p>
+</div>
+
+
+<a href="labSixTaskThree.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >lab-6-3</button></a>
+<a href="labSixTaskFive.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >lab-6-5</button></a>
+
+
+<script>
+function search() {
+  var input, filter, ul, li, matches = 0;
+  input = document.getElementById('searchInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById('cityList');
+  li = ul.getElementsByTagName('li');
+
+  for (var i = 0; i < li.length; i++) {
+    var txtValue = li[i].textContent || li[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].classList.add('highlight');
+      matches++;
+    } else {
+      li[i].classList.remove('highlight');
+    }
+  }
+
+  document.getElementById('results').innerText = matches + " -> Совпадений найденно";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table Search</title>
+<style>
+  .select {
+    background-color: yellow;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  #container {
+    text-align: center;
+  }
+
+  #searchInput {
+    padding: 8px;
+    margin-right: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  #searchButton {
+    padding: 8px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 20px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f2f2f2;
+  }
+
+  .select {
+    background-color: yellow;
+  }
+</style>
+</head>
+<body>
+  <div id="container">
+<input type="text" id="searchInput" placeholder="Search...">
+<button onclick="searchTable()">Search</button>
+<br>
+<table id="dataTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Country</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>John Smith</td>
+      <td>25</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td>Alice Johnson</td>
+      <td>30</td>
+      <td>Canada</td>
+    </tr>
+    <tr>
+      <td>Michael Brown</td>
+      <td>40</td>
+      <td>UK</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+
+<script>
+function searchTable() {
+  var input, filter, table, tr, td, i, j, match;
+  input = document.getElementById("searchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("dataTable");
+  tr = table.getElementsByTagName("tr");
+
+  for (i = 1; i < tr.length; i++) {
+    match = false;
+    td = tr[i].getElementsByTagName("td");
+    for (j = 0; j < td.length; j++) {
+      if (td[j].textContent.toUpperCase().indexOf(filter) > -1) {
+        match = true;
+        break;
+      }
+    }
+    if (match) {
+      tr[i].classList.add('select');
+    } else {
+      tr[i].classList.remove('select');
+    }
+  }
+}
+</script>
+
+</body>
+</html>
