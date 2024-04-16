@@ -19,12 +19,14 @@
                 <h2 class="input_title">Naming Convetion:</h2>
                 <input type="text" class="inTxt" id="command">
             </div>
-            <button class="trans_button" type="submit">TRANSFORM</button>
+            <button class="trans_button" type="button">TRANSFORM</button>
         </div>
 
 
-        <div class="convertor__result">
-
+        <div class="convertor__result" id="convertor__result" style="color: white;">
+                <div class="result" id="result" style="padding-top: 20px; margin: auto;">
+                
+                </div>
         </div>
 
     </div>
@@ -33,12 +35,60 @@
     <a href="labSixTaskThree.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >lab-6-3</button></a>
 
     <script>
-        function camalCase(){
+        document.querySelector("button").onclick = covertor;
 
+
+        function covertor(){
+        var text = (document.getElementById('textIn').value).toString();
+        var command = (document.getElementById('command').value).toString();
+
+            console.log(command)
+            switch(command){
+                case "Camel Case":
+                    camalCase(text)
+                    break
+                case "Pascal Case":
+                    pascalCase(text)
+                    break
+                default: 
+                    document.getElementById('result').innerText =  "Error!";
+            }
+
+        }   
+
+        
+        function camalCase(str){
+            let strMass = str.split(" ");
+            for(let i = 1; i < strMass.length; i++){
+                let currentMass = strMass[i].toLowerCase();
+                
+                const coversionOfFirstLetter = currentMass[0].toUpperCase() + currentMass.substring(1);
+                strMass[i] = coversionOfFirstLetter;
+            }
+
+            let result = "";
+            for(let j = 0; j <strMass.length; j++){
+                result += strMass[j];
+            }
+            document.getElementById('result').innerText =  result;
         }
 
-        function pascalCase(){
-            
+        function pascalCase(str){
+            let strMass = str.split(" ");
+
+
+            for(let i = 0; i < strMass.length; i++){
+                let currentMass = strMass[i].toLowerCase();
+                
+                const coversionOfFirstLetter = currentMass[0].toUpperCase() + currentMass.substring(1);
+                strMass[i] = coversionOfFirstLetter;
+            }
+
+            let result = "";
+            for(let j = 0; j <strMass.length; j++){
+                result += strMass[j];
+            }
+            document.getElementById('result').innerText =  result;
         }
 
     </script>

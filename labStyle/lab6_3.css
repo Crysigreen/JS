@@ -1,0 +1,59 @@
+.container{
+
+    width: 600px;
+    height: 600px;
+    margin: 100px auto;
+}
+
+.accordion {
+    background-color: rgba(199, 197, 254, 1);
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: 1px solid rgba(198, 192, 192, 1);
+    border-bottom: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    margin-top: 10px;
+  }
+  
+  /* .active, .accordion:hover {
+    background-color: rgb(156, 154, 206);
+    
+  } */
+
+  
+  
+  .accordion:after {
+    content: "More";
+    width: 70px;
+    height: 25px;
+    text-align: center;
+    padding-top: auto;
+    border-bottom: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    
+  }
+  
+  .active:after {
+    content: "Less";
+    width: 50px;
+    border-bottom: none;
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border: 1px solid rgba(198, 192, 192, 1);
+    border-top: none;
+  }

@@ -152,6 +152,42 @@ const input = [
 storeMovies(input);
 
 
+function camelCaseFunc(str){
+
+    let strMass = str.split(" ");
+    for(let i = 1; i < strMass.length; i++){
+        let currentMass = strMass[i].toLowerCase();
+        
+        const coversionOfFirstLetter = currentMass[0].toUpperCase() + currentMass.substring(1);
+        strMass[i] = coversionOfFirstLetter;
+    }
+
+    let result = "";
+    for(let j = 0; j <strMass.length; j++){
+        result += strMass[j];
+    }
+    console.log(result);
+}
 
 
+camelCaseFunc("this is an example");
 
+function pascalCase(str){
+    let strMass = str.split(" ");
+
+
+    for(let i = 0; i < strMass.length; i++){
+        let currentMass = strMass[i].toLowerCase();
+        
+        const coversionOfFirstLetter = currentMass[0].toUpperCase() + currentMass.substring(1);
+        strMass[i] = coversionOfFirstLetter;
+    }
+
+    let result = "";
+    for(let j = 0; j <strMass.length; j++){
+        result += strMass[j];
+    }
+    console.log(result);
+}
+
+pascalCase("secOND eXamPLE");
