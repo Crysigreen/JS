@@ -1,0 +1,129 @@
+<style>
+    .hidden-fields {
+    display: none;
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locked Profile</title>
+<link rel="stylesheet" href="template.css">
+</head>
+<body>
+	<div id="container">
+		<main id="main">
+
+			<div class="profile">
+				<img src="iconProfile2.png" class="userIcon" />
+				<label>Lock</label>
+				<input type="radio" name="user1Locked" value="lock" checked>
+				<label>Unlock</label>
+				<input type="radio" name="user1Locked" value="unlock"><br>
+				<hr>
+				<label>Username</label>
+				<input type="text" name="user1Username" value="User 1 Userov" disabled readonly />
+				<div class="hidden-fields" id="user1HiddenFields">
+					<hr>
+					<label>Email:</label>
+					<input type="email" name="user1Email" value="user1-userov@users.com" disabled readonly />
+					<label>Age:</label>
+					<input type="text" name="user1Age" value="18" disabled readonly />
+				</div>
+				<button>Show more</button>
+			</div>
+
+			<div class="profile">
+				<img src="iconProfile2.png" class="userIcon" />
+				<label>Lock</label>
+				<input type="radio" name="user2Locked" value="lock" checked>
+				<label>Unlock</label>
+				<input type="radio" name="user2Locked" value="unlock"><br>
+				<hr>
+				<label>Username</label>
+				<input type="text" name="user2Username" value="User 2 Userov" disabled readonly />
+				<div class="hidden-fields" id="user2HiddenFields">
+					<hr>
+					<label>Email:</label>
+					<input type="email" name="user2Email" value="user2-userov@users.com" disabled readonly />
+					<label>Age:</label>
+					<input type="email" name="user2Age" value="25" disabled readonly />
+				</div>
+				<button>Show more</button>
+			</div>
+
+			<div class="profile">
+				<img src="iconProfile2.png" class="userIcon" />
+				<label>Lock</label>
+				<input type="radio" name="user3Locked" value="lock" checked>
+				<label>Unlock</label>
+				<input type="radio" name="user3Locked" value="unlock"><br>
+				<hr>
+				<label>Username</label>
+				<input type="text" name="user3Username" value="User 3 Userov" disabled readonly />
+				<div class="hidden-fields" id="user3HiddenFields">
+					<hr>
+					<label>Email:</label>
+					<input type="email" name="user3Email" value="user3-userov@users.com" disabled readonly />
+					<label>Age:</label>
+					<input type="email" name="user3Age" value="23" disabled readonly />
+				</div>
+				<button>Show more</button>
+			</div>
+
+            
+		</main>
+
+        
+	</div>
+
+    <a href="labSixTaskSix.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >lab-6-6</button></a>
+            <a href="labSixTaskEleven.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >lab-6-8</button></a>
+	<script src="app.js"></script>
+	<script>
+        function lockedProfile() {
+            const profiles = document.querySelectorAll('.profile');
+
+            profiles.forEach(profile => {
+                const lockRadio = profile.querySelector('input[value="lock"]');
+                const unlockRadio = profile.querySelector('input[value="unlock"]');
+                const hiddenFields = profile.querySelector('.hidden-fields');
+                const showMoreButton = profile.querySelector('button');
+
+                // Устанавливаем начальное состояние профиля
+                updateProfileState();
+
+                // Добавляем обработчик событий на радио кнопки
+                lockRadio.addEventListener('change', updateProfileState);
+                unlockRadio.addEventListener('change', updateProfileState);
+
+                // Добавляем обработчик события на кнопку "Show more"
+                showMoreButton.addEventListener('click', () => {
+                    // Проверяем, разблокирован ли профиль
+                    if (unlockRadio.checked) {
+                        // Переключаем видимость скрытых полей
+                        hiddenFields.classList.toggle('hidden-fields');
+                        // Меняем текст кнопки
+                        showMoreButton.textContent = hiddenFields.classList.contains('hidden-fields') ? 'Show more' : 'Hide it';
+                    }
+                });
+
+                function updateProfileState() {
+                    // Проверяем состояние блокировки профиля и скрываем или показываем скрытые поля
+                    if (lockRadio.checked) {
+                        hiddenFields.classList.add('hidden');
+                        showMoreButton.textContent = 'Show more';
+                    } else {
+                        hiddenFields.classList.remove('hidden');
+                        showMoreButton.textContent = 'Hide it';
+                    }
+                }
+            });
+        }
+
+		window.onload = lockedProfile;
+	</script>
+</body>
+</html>

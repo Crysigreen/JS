@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fill Dropdown</title>
+    <script src="dropdown.js"></script>
+    <link rel="stylesheet" href="filldropdown.css">
+</head>
+
+<body>
+    <h1>Dropdown Menu</h1>
+    <article>
+        <div>
+            <select id="menu"></select>
+        </div>
+        <label for="newItemText">
+            Text:
+        </label>
+        <input type="text" id="newItemText" />
+        <label for="newItemValue">
+            Value:
+        </label>
+        <input type="text" id="newItemValue" />
+        <input type="button" value="Add" onclick="addItem()">
+    </article>
+
+
+    
+    <a href="labSixTaskSeven.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >lab-6-7</button></a>
+
+    <script>
+
+        function addItem() {
+            // Получаем значения из полей ввода
+            const text = document.getElementById('newItemText').value;
+            const value = document.getElementById('newItemValue').value;
+
+            // Получаем элемент select
+            const selectMenu = document.getElementById('menu');
+
+            // Создаем новый элемент option
+            const option = document.createElement('option');
+            option.text = text;
+            option.value = value;
+
+            // Добавляем новый элемент в select
+            selectMenu.appendChild(option);
+        }
+
+    </script>
+</body>
+
+</html>

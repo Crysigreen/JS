@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Конвертер времени</title>
+<style>
+    .container {
+        width: 40%;
+        margin: 100px auto;
+        background-color: rgba(245, 245, 245, 1);
+        padding: 20px;
+    }
+
+    .inAndButtonContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input__txt {
+        width: 60%;
+        margin: 10px auto;
+    }
+
+    .convert-btn {
+        width: 25%;
+        height: 25px;
+        margin: auto;
+        margin-bottom: 10px;
+        color: white;
+        background-color: rgba(119, 119, 119, 1);
+        box-shadow: none;
+        border: none;
+        border-radius: 5px;
+
+    }
+
+    .convert-btn:hover {
+        border: 2px solid rgba(144, 170, 229, 1);
+        border-radius: 10px;
+    }
+
+    label {
+        text-align: center;
+    }
+
+    .resset__button {
+        margin: auto;
+    }
+</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="inAndButtonContainer">
+            <label for="days">Дни:</label>
+            <input class="input__txt" type="text" id="days" placeholder="Введите дни">
+            <button class="convert-btn" onclick="handleConversion('days')">CONVERT</button>
+        </div>
+        <div class="inAndButtonContainer">
+            <label for="hours">Часы:</label>
+            <input class="input__txt" type="text" id="hours" placeholder="Введите часы">
+            <button class="convert-btn" onclick="handleConversion('hours')">CONVERT</button>
+        </div>
+        <div class="inAndButtonContainer">
+            <label for="minutes">Минуты:</label>
+            <input class="input__txt" type="text" id="minutes" placeholder="Введите минуты">
+            <button class="convert-btn" onclick="handleConversion('minutes')">CONVERT</button>
+        </div>
+        <div class="inAndButtonContainer">
+            <label for="seconds">Секунды:</label>
+            <input class="input__txt" type="text" id="seconds" placeholder="Введите секунды">
+            <button class="convert-btn" onclick="handleConversion('seconds')">CONVERT</button>
+        </div>
+        <div>
+            <button class="resset__button" id="clear-btn" onclick="resetValues()">Очистить</button>
+        </div>
+    </div>
+
+    <a href="labSixTaskFive.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >lab-6-5</button></a>
+    <a href="labSixTaskSeven.html"><button style="width: 150px; height: 100px; color: black; margin-top: 800px;" type="button" >lab-6-7</button></a>
+
+    <script>
+        function handleConversion(conversionType) { 
+            const daysInput = document.getElementById('days');
+            const hoursInput = document.getElementById('hours');
+            const minutesInput = document.getElementById('minutes');
+            const secondsInput = document.getElementById('seconds');
+
+            const inputValue = parseFloat(document.querySelector('.input__txt').value) || 0;
+
+            switch (conversionType) { 
+                case 'days': 
+                    hoursInput.value = String(inputValue * 24); 
+                    minutesInput.value = String(inputValue * 24 * 60); 
+                    secondsInput.value = String(inputValue * 24 * 60 * 60); 
+                    break; 
+                case 'hours': 
+                    daysInput.value = String(inputValue / 24); 
+                    minutesInput.value = String(inputValue * 60); 
+                    secondsInput.value = String(inputValue * 60 * 60); 
+                    break; 
+                case 'minutes': 
+                    daysInput.value = String(inputValue / 60 / 24); 
+                    hoursInput.value = String(inputValue / 60); 
+                    secondsInput.value = String(inputValue * 60); 
+                    break; 
+                case 'seconds': 
+                    daysInput.value = String(inputValue / 60 / 60 / 24); 
+                    hoursInput.value = String(inputValue / 60 / 60); 
+                    minutesInput.value = String(inputValue / 60); 
+                    break; 
+                default: 
+                    break; 
+            } 
+        } 
+
+        function resetValues() {
+            document.getElementById('days').value = '';
+            document.getElementById('hours').value = '';
+            document.getElementById('minutes').value = '';
+            document.getElementById('seconds').value = '';
+        }
+    </script>
+</body>
+</html>
