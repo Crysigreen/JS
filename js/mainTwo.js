@@ -30,115 +30,120 @@ labFiveTaskTwo(mass);
 console.log("<==========================================>");
 console.log("Лабороторная №5 Задание 3");
 
+function updateInventory(currentStock, incomingStock) {
+    // Создаем объект для хранения инвентаря
+    let inventory = {};
+
+    // Функция для добавления или обновления продукта в инвентаре
+    function addToInventory(product, quantity) {
+        if (inventory[product]) {
+            inventory[product] += parseInt(quantity); // Увеличиваем количество, если продукт уже существует
+        } else {
+            inventory[product] = parseInt(quantity); // Добавляем новый продукт в инвентарь
+        }
+    }
+
+    // Обрабатываем текущий запас магазина
+    for (let i = 0; i < currentStock.length; i += 2) {
+        let product = currentStock[i];
+        let quantity = currentStock[i + 1];
+        addToInventory(product, quantity);
+    }
+
+    // Обрабатываем поступление нового запаса
+    for (let i = 0; i < incomingStock.length; i += 2) {
+        let product = incomingStock[i];
+        let quantity = incomingStock[i + 1];
+        addToInventory(product, quantity);
+    }
+
+    // Возвращаем отсортированный объект инвентаря
+    return inventory;
+}
+
+// Пример использования функции с заданными входными данными
 let shop = ['Chips', '5', 'CocaCola', '9', 'Bananas', '14', 'Pasta', '4', 'Beer', '2'];
 let inShop = ['Flour', '44', 'Oil', '12', 'Pasta', '7', 'Tomatoes', '70', 'Bananas', '30']
-    
-function Shop(shop, inShop){
-    // for(let i = 0; i < shop.length; i++){
-    //         if(i % 2 == 0){
-    //         let currentElement = shop[i];
-    //         console.log(currentElement + " -> " + shop[i + 1]);
-    //         }
-    // }
 
-    for(let i = 0; i < shop.length; i++){
-        if(i % 2 == 0){
-            
-            for(let j = 0; j < inShop.length; j++){
-                if(j % 2 == 0){
-                    if(shop[i] == inShop[j]){
-                        let result = parseInt(shop[i + 1]) + parseInt(inShop[j + 1]);
-                        delete inShop[j];
-                        delete inShop[j + 1];
-                        shop[i + 1] = result;
-                        // console.log("Элемент их первого масссива " + shop[i] + " Элемент из второго массива " + inShop[j] + "результат " + result);
-                    }
+// Получаем объект инвентаря
+let inventory = updateInventory(shop, inShop);
+
+console.log(inventory);
+
+// Выводим объект инвентаря в нужном формате
+for (let product in inventory) {
+    console.log(`${product} -> ${inventory[product]}`);
+}
+
+
+
+
+// Shop(shop, inShop);
+
+console.log("<==========================================>");
+console.log("Лабороторная №5 Задание 4");
+function processCommands(commands) {
+    // Объект для хранения информации о фильмах
+    let movies = {};
+
+    // Функция для добавления фильма или обновления существующей информации
+    function addOrUpdateMovie(movieName, director, date) {
+        if (!movies[movieName]) {
+            movies[movieName] = {};
+        }
+        if (director) {
+            movies[movieName].director = director;
+        }
+        if (date) {
+            movies[movieName].date = date;
+        }
+    }
+
+    // Обрабатываем каждую команду
+    for (let command of commands) {
+        // Разбиваем команду на части
+        let parts = command.split(' ');
+
+        if (parts[0] === 'addMovie') {
+            // Добавляем новый фильм
+            let movieName = parts.slice(1).join(' ');
+            addOrUpdateMovie(movieName);
+        } else {
+            // Обрабатываем команды с указанием режиссера или даты
+            let movieIndex = parts.indexOf('directedBy');
+            if (movieIndex !== -1) {
+                let movieName = parts.slice(0, movieIndex).join(' ');
+                let director = parts.slice(movieIndex + 1).join(' ');
+                addOrUpdateMovie(movieName, director);
+            } else {
+                movieIndex = parts.indexOf('onDate');
+                if (movieIndex !== -1) {
+                    let movieName = parts.slice(0, movieIndex).join(' ');
+                    let date = parts.slice(movieIndex + 1).join(' ');
+                    addOrUpdateMovie(movieName, null, date);
                 }
             }
         }
     }
 
-    let resultMass = [];
-
-    for(let k = 0; k < shop.length; k++){
-        resultMass.push(shop[k]);
-    }
-
-    for(let r = 0; r < inShop.length; r++){
-        resultMass.push(inShop[r]);
-    }
-
-    resultMass = resultMass.filter(function (element ) {
-        return element !== undefined;
-    });
-
-    for(let y = 0; y < resultMass.length; y += 2){
-        let product = {
-            name: resultMass[y],
-            amount: resultMass[y + 1]
+    // Фильтруем фильмы и выводим информацию в формате JSON
+    let result = [];
+    for (let movieName in movies) {
+        let movieInfo = movies[movieName];
+        if (movieInfo.director && movieInfo.date) {
+            result.push({
+                name: movieName,
+                director: movieInfo.director,
+                date: movieInfo.date
+            });
         }
-
-        console.log(product.name + " -> " + product.amount);
     }
+
     
+    console.log(result);
 }
 
-
-
-Shop(shop, inShop);
-
-console.log("<==========================================>");
-console.log("Лабороторная №5 Задание 4");
-
-function storeMovies(commands) {
-    const movies = [];
-
-    function findMovieIndex(movieName) {
-        return movies.findIndex(movie => movie.name === movieName);
-    }
-
-    function addMovie(movieName) {
-        movies.push({ name: movieName });
-    }
-
-    function addDirector(movieName, director) {
-        const index = findMovieIndex(movieName);
-        if (index !== -1) {
-            movies[index].director = director;
-        }
-    }
-
-    function addDate(movieName, date) {
-        const index = findMovieIndex(movieName);
-        if (index !== -1) {
-            movies[index].date = date;
-        }
-    }
-
-    commands.forEach(command => {
-        const [action, ...params] = command.split(' ');
-
-        if (action === 'addMovie') {
-            const movieName = params.join(' ');
-            addMovie(movieName);
-        } else {
-            const movieName = action;
-            const actionType = params[0];
-            const info = params.slice(1).join(' ');
-
-            if (actionType === 'directedBy') {
-                addDirector(movieName, info);
-            } else if (actionType === 'onDate') {
-                addDate(movieName, info);
-            }
-        }
-    });
-
-    const completeMovies = movies.filter(movie => movie.name && movie.director && movie.date);
-    console.log(JSON.stringify(completeMovies));
-}
-
-const input = [
+let commands = [
     'addMovie Fast and Furious',
     'addMovie Godfather',
     'Inception directedBy Christopher Nolan',
@@ -147,11 +152,11 @@ const input = [
     'Fast and Furious onDate 30.07.2018',
     'Batman onDate 01.08.2018',
     'Fast and Furious directedBy Rob Cohen'
-    ]
-
-storeMovies(input);
+];
 
 
+processCommands(commands);
+console.log("<==========================================>");
 function camelCaseFunc(str){
 
     let strMass = str.split(" ");
