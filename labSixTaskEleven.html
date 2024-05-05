@@ -32,19 +32,26 @@
     <script>
 
         function addItem() {
-            // Получаем значения из полей ввода
+             
             const text = document.getElementById('newItemText').value;
             const value = document.getElementById('newItemValue').value;
 
-            // Получаем элемент select
+            
             const selectMenu = document.getElementById('menu');
 
-            // Создаем новый элемент option
+            for (const option of selectMenu.options) {
+                if (option.value === value || option.text === text) {
+                    alert('Такой элемент уже существует!');
+                    return; 
+                }
+    }
+
+            
             const option = document.createElement('option');
             option.text = text;
             option.value = value;
 
-            // Добавляем новый элемент в select
+            
             selectMenu.appendChild(option);
         }
 
