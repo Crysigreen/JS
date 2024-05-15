@@ -1,6 +1,6 @@
 //Lab one
 console.log("<==========================================>");
-console.log("Задание №1")
+console.log("\x1b[32mЛабораторная №1 Задание №1")
 function Age(ages){
     if(ages <= 2){
         console.log("Возраст: Младенец" + " " +  ages);
@@ -24,7 +24,7 @@ Age(1);
 Age(100);
 
 console.log("<==========================================>");
-console.log("Задание №2")
+console.log("\x1b[32mЛабораторная №1 Задание №2")
 function RoundingUp(num, accuracy){
 
     if( accuracy > 15){
@@ -41,7 +41,7 @@ RoundingUp(3.1415926535897932384626433832795, 2);
 RoundingUp(10.5,3);
 console.log("<==========================================>");
 
-console.log("Задание №3")
+console.log("\x1b[32mЛабораторная №1 Задание №3")
 
 function Divider(num){
 
@@ -68,7 +68,7 @@ Divider(1643);
 
 console.log("<==========================================>");
 
-console.log("Задание №4")
+console.log("\x1b[32mЛабораторная №1 Задание №4")
 
 function Holidays(person, type, day){
 
@@ -170,8 +170,7 @@ Holidays(30, "Students", "Sunday");
 Holidays(40,"Regular","Saturday");
 
 console.log("<==========================================>");
-
-console.log("Задание №5")
+console.log("\x1b[32mЛабораторная №1 Задание №5")
 
 function Years(year){
     if((((year % 4) == 0)) || ((year % 400) == 0) && ((year % 100) > 0)){
@@ -185,9 +184,10 @@ Years(1984);
 Years(2003);
 Years(4);
 Years(2024);
+
+
 console.log("<==========================================>");
-//Lab Two
-console.log("Лабороторная №2 Задание 1");
+console.log("\x1b[32mЛабораторная №2 Задание 1");
 
 function SumNumbers(num){
     let numStr = num.toString();
@@ -202,7 +202,7 @@ SumNumbers(245678);
 SumNumbers(97561);
 SumNumbers(543);
 console.log("<==========================================>");
-console.log("Лабороторная №2 Задание 2");
+console.log("\x1b[32mЛабораторная №2 Задание 2");
 
 function CharContact(charOne, charTwo, charThree){
     let chars = [charOne, charTwo, charThree];
@@ -215,7 +215,7 @@ CharContact('%', '2', 'o');
 CharContact('1', '5', 'p');
 
 console.log("<==========================================>");
-console.log("Лабороторная №2 Задание 3");
+console.log("\x1b[32mЛабораторная №2 Задание 3");
 
 
 function TownInformation(nameTwon, population, area){
@@ -225,7 +225,7 @@ console.log(TownInformation('Moscow', 12636312, 2561));
 
 
 console.log("<==========================================>");
-console.log("Лабороторная №2 Задание 4");
+console.log("\x1b[32mЛабораторная №2 Задание 4");
 
 function Calculater(numOne, tupeOperation, numTwo){
     switch(tupeOperation){
@@ -242,7 +242,7 @@ Calculater(5,'+',10);
 Calculater(25.5, '-', 3);
 
 console.log("<==========================================>");
-console.log("Лабороторная №2 Задание 5");
+console.log("\x1b[32mЛабораторная №2 Задание 5");
 
 function BinaryToDecimal(binary){
     var digit = parseInt(binary, 2);
@@ -253,7 +253,7 @@ function BinaryToDecimal(binary){
 BinaryToDecimal("00001001");
 BinaryToDecimal("11110000");
 console.log("<==========================================>");
-console.log("Лабороторная №3 Задание 1");
+console.log("\x1b[32mЛабораторная №3 Задание 1");
 
 function Operation(arrayNum){
     var index = 0;
@@ -303,7 +303,7 @@ Operation([5, 15, 23, 56, 35]);
 Operation([-5, 11, 3, 0, 2]);
 
 console.log("<==========================================>");
-console.log("Лабороторная №3 Задание 2");
+console.log("\x1b[32mЛабораторная №3 Задание 2");
 
 function CommonElements(arrayOne, arrayTwo){
 
@@ -326,7 +326,7 @@ CommonElements(['Hey', 'hello', 2, 4, 'Peter', 'e'], ['Petar', 10, 'hey', 4, 'he
 CommonElements(['R', 'u', 's', 's', 'i', 'a'], ['R', 'u', 't']);
 
 console.log("<==========================================>");
-console.log("Лабороторная №3 Задание 3");
+console.log("\x1b[32mЛабораторная №3 Задание 3");
 
 
 function Rotate(array, d){
@@ -355,7 +355,7 @@ Rotate([32, 21, 61, 1], 4);
 Rotate([2, 4, 15, 31], 5);
 
 console.log("<==========================================>");
-console.log("Лабороторная №3 Задание 4");
+console.log("\x1b[32mЛабораторная №3 Задание 4");
 
 
 
@@ -445,7 +445,7 @@ if(yesThre > noThre){
 }
 
 console.log("<==========================================>");
-console.log("Лабороторная №4 Задание 1");
+console.log("\x1b[32mЛабораторная №4 Задание 1");
 
 function SmallestThreeNumbers(numOne, numTwo, numThree){
     if((numOne < numTwo) && (numOne < numThree)){
@@ -463,7 +463,7 @@ SmallestThreeNumbers(600, 342, 123);
 SmallestThreeNumbers(25, 21, 4);
 
 console.log("<==========================================>");
-console.log("Лабороторная №4 Задание 2");
+console.log("\x1b[32mЛабораторная №4 Задание 2");
 
 function SumAndDifference(one, two, three){
     console.log((one + two) - three);
@@ -475,7 +475,7 @@ SumAndDifference(1, 17, 30);
 SumAndDifference(42, 58, 100);
 
 console.log("<==========================================>");
-console.log("Лабороторная №4 Задание 3");
+console.log("\x1b[32mЛабораторная №4 Задание 3");
 
 function MatrixNxN(n){
     console.log(`Матрица размером: ${n}`);
@@ -498,14 +498,11 @@ MatrixNxN(7);
 MatrixNxN(2);
 
 console.log("<==========================================>");
-console.log("Лабороторная №4 Задание 4");
+console.log("\x1b[32mЛабораторная №4 Задание 4\x1b[0m");
 
 function ProgressBar(num){
     let test = num / 10;
-    // let point = 10 - test;
     let result = [];
-    // console.log(test);
-    // console.log(point);
     for(let i = 0; i < 10; i++){
         if( i < test){
             result[i] = "%";
@@ -533,70 +530,220 @@ ProgressBar(100);
 
 
 console.log("<==========================================>");
-console.log("Лабороторная №5 Задание 1");
+console.log("\x1b[32mЛабораторная №5 Задание 1");
 
 
 
 function Teams(names){
+    names.forEach(name => {
+        let person = {
+            name, 
+            personalNumber: name.length
+        }
 
-//     let countTest = 0;
-//     let nameCount = 0;
-//     console.log(names);
-// for(let i = 0; i < names.length; i++){
-//     nameCount += 1;
-    
-    
-//     countTest = 0;
-//     for(let j = 0; j < names[i].length; j++){
-//         countTest += 1;
-//     }
-
-//     const Person = Object.create(
-//         {},
-//         {
-//             name:{
-//              value: names[i],
-//              enumerable: true
-//             },
-//             number:{
-//                 value: countTest,
-//                 enumerable: true
-//             }
-
-//         }
-//     );
-    
-    
-
-    
-
-//     // console.log(Names[i]);
-//     // console.log(nameCount);
-//     // console.log(countTest); 
-
-//     console.log(`Name: ${Person.name} - Personal Number: ${Person.number}`);
-// }
-
-names.forEach(name => {
-    let person = {
-        name, 
-        personalNumber: name.length
-    }
-
-    console.log(person);
-});
-   
+        console.log(person);
+    });
 }
 
-
-
 let mass = ['Silas Butler','Adnaan Buckley','Juan Peterson','Brendan Villarreal'];
-
-
 
 Teams(mass);
 
 console.log("<==========================================>");
-console.log("Лабороторная №5 Задание 2");
+console.log("\x1b[32mЛабораторная №5 Задание 2");
+
+let mass1 = ['Moscow | 55.7522 | 37.6156', 'Beijing | 39.913818 | 116.363625'];
+
+console.log(mass1.length);
 
 
+function labFiveTaskTwo(mass1){
+    for(let i = 0; i < mass1.length; i++){
+        const str = mass1[i];
+        let currentMass =  str.split(' | ');
+        currentMass[1] = Number(currentMass[1]).toFixed(2);
+        currentMass[2] = Number(currentMass[2]).toFixed(2);
+
+        let Town = {
+            town: currentMass[0], 
+            latitude: currentMass[1],
+            longitude: currentMass[2]
+
+        }
+
+        console.log(Town);
+    }
+}
+
+labFiveTaskTwo(mass1);
+
+
+console.log("<==========================================>");
+console.log("\x1b[32mЛабораторная №5 Задание 3");
+
+function updateInventory(currentStock, incomingStock) {
+    // Создаем объект для хранения инвентаря
+    let inventory = {};
+
+    // Функция для добавления или обновления продукта в инвентаре
+    function addToInventory(product, quantity) {
+        if (inventory[product]) {
+            inventory[product] += parseInt(quantity); // Увеличиваем количество, если продукт уже существует
+        } else {
+            inventory[product] = parseInt(quantity); // Добавляем новый продукт в инвентарь
+        }
+    }
+
+    // Обрабатываем текущий запас магазина
+    for (let i = 0; i < currentStock.length; i += 2) {
+        let product = currentStock[i];
+        let quantity = currentStock[i + 1];
+        addToInventory(product, quantity);
+    }
+
+    // Обрабатываем поступление нового запаса
+    for (let i = 0; i < incomingStock.length; i += 2) {
+        let product = incomingStock[i];
+        let quantity = incomingStock[i + 1];
+        addToInventory(product, quantity);
+    }
+
+    // Возвращаем отсортированный объект инвентаря
+    return inventory;
+}
+
+// Пример использования функции с заданными входными данными
+let shop = ['Chips', '5', 'CocaCola', '9', 'Bananas', '14', 'Pasta', '4', 'Beer', '2'];
+let inShop = ['Flour', '44', 'Oil', '12', 'Pasta', '7', 'Tomatoes', '70', 'Bananas', '30']
+
+// Получаем объект инвентаря
+let inventory = updateInventory(shop, inShop);
+
+console.log(inventory);
+
+// Выводим объект инвентаря в нужном формате
+for (let product in inventory) {
+    console.log(`${product} -> ${inventory[product]}`);
+}
+
+
+
+
+// Shop(shop, inShop);
+
+console.log("<==========================================>");
+console.log("\x1b[32mЛабораторная №5 Задание 4");
+function processCommands(commands) {
+    // Объект для хранения информации о фильмах
+    let movies = {};
+
+    // Функция для добавления фильма или обновления существующей информации
+    function addOrUpdateMovie(movieName, director, date) {
+        if (!movies[movieName]) {
+            movies[movieName] = {};
+        }
+        if (director) {
+            movies[movieName].director = director;
+        }
+        if (date) {
+            movies[movieName].date = date;
+        }
+    }
+
+    // Обрабатываем каждую команду
+    for (let command of commands) {
+        // Разбиваем команду на части
+        let parts = command.split(' ');
+
+        if (parts[0] === 'addMovie') {
+            // Добавляем новый фильм
+            let movieName = parts.slice(1).join(' ');
+            addOrUpdateMovie(movieName);
+        } else {
+            // Обрабатываем команды с указанием режиссера или даты
+            let movieIndex = parts.indexOf('directedBy');
+            if (movieIndex !== -1) {
+                let movieName = parts.slice(0, movieIndex).join(' ');
+                let director = parts.slice(movieIndex + 1).join(' ');
+                addOrUpdateMovie(movieName, director);
+            } else {
+                movieIndex = parts.indexOf('onDate');
+                if (movieIndex !== -1) {
+                    let movieName = parts.slice(0, movieIndex).join(' ');
+                    let date = parts.slice(movieIndex + 1).join(' ');
+                    addOrUpdateMovie(movieName, null, date);
+                }
+            }
+        }
+    }
+
+    // Фильтруем фильмы и выводим информацию в формате JSON
+    let result = [];
+    for (let movieName in movies) {
+        let movieInfo = movies[movieName];
+        if (movieInfo.director && movieInfo.date) {
+            result.push({
+                name: movieName,
+                director: movieInfo.director,
+                date: movieInfo.date
+            });
+        }
+    }
+
+    
+    console.log(result);
+}
+
+let commands = [
+    'addMovie Fast and Furious',
+    'addMovie Godfather',
+    'Inception directedBy Christopher Nolan',
+    'Godfather directedBy Francis Ford Coppola',
+    'Godfather onDate 29.07.2018',
+    'Fast and Furious onDate 30.07.2018',
+    'Batman onDate 01.08.2018',
+    'Fast and Furious directedBy Rob Cohen'
+];
+
+
+processCommands(commands);
+console.log("<==========================================>");
+function camelCaseFunc(str){
+
+    let strMass = str.split(" ");
+    for(let i = 1; i < strMass.length; i++){
+        let currentMass = strMass[i].toLowerCase();
+        
+        const coversionOfFirstLetter = currentMass[0].toUpperCase() + currentMass.substring(1);
+        strMass[i] = coversionOfFirstLetter;
+    }
+
+    let result = "";
+    for(let j = 0; j <strMass.length; j++){
+        result += strMass[j];
+    }
+    console.log(result);
+}
+
+
+camelCaseFunc("this is an example");
+
+function pascalCase(str){
+    let strMass = str.split(" ");
+
+
+    for(let i = 0; i < strMass.length; i++){
+        let currentMass = strMass[i].toLowerCase();
+        
+        const coversionOfFirstLetter = currentMass[0].toUpperCase() + currentMass.substring(1);
+        strMass[i] = coversionOfFirstLetter;
+    }
+
+    let result = "";
+    for(let j = 0; j <strMass.length; j++){
+        result += strMass[j];
+    }
+    console.log(result);
+}
+
+pascalCase("secOND eXamPLE");
